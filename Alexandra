@@ -1,0 +1,6 @@
+git clone https://github.com/NOMBRE-DE-USUARIO/proyecto-final-equipo5.git
+cd proyecto-final-equipo5
+code .
+git config --global user.name "Alexandra Grisales"
+git config --global user.email "alexandra@example.com"
+git checkout -b alexandra
