@@ -1,11 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurantes Colombianos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ffe0b2, #fff3e0);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #d84315;
+    }
+
+    header {
+      background-color: #ffccbc;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .restaurant-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .restaurant {
+      background: #fff8e1;
+      border: 2px solid #f57c00;
+      border-radius: 15px;
+      padding: 15px;
+      width: 260px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .restaurant:hover {
+      transform: scale(1.03);
+    }
+
+    .restaurant img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .form-container {
+      background-color: #ffe0b2;
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 40px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #ff7043;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #f4511e;
+    }
+
+    .thank-you {
+      margin-top: 30px;
+      background-color: #fff3e0;
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #d84315;
+    }
+
+    .browser-bar, .restaurant-result {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .nav-bar span {
+      background: #ffe0b2;
+      padding: 5px 10px;
+      border-radius: 20px;
+      color: #bf360c;
+      font-weight: bold;
+    }
+
+    .thanks, .note {
+      margin-top: 30px;
+      background-color: #fffde7;
+      padding: 15px;
+      border-left: 5px solid #f57f17;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Restaurante</h1>
+
+  <h1>Restaurantes Colombianos</h1>
+  <header>
+    <h2>Restaurante IUD DIGITAL</h2>
+    <p>La Institución Universitaria Digital de Antioquía ha sido contratada para desarrollar un directorio web de restaurantes. Esta aplicación permite listar, buscar y registrar restaurantes cercanos al municipio de Guarne, Antioquia.</p>
+  </header>
+
+  <section>
+    <h2>Página de Inicio - Restaurantes cercanos a Guarne</h2>
+    <div class="restaurant-list">
+      <div class="restaurant">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqiGYRSUIF5O7dvpF9W63AzmdutB_esH1hFKNGE7Ku6_hTPvTvU_nAZE0rAaV6gI4mZSH47dTjsdv-FfMovwmJG0Q-Ogxgur1EZKEEuTMU0rvsKUhGBclf7_rshQuAOfd40y4O7sw=s680-w680-h510-rw" alt="Restaurante La Montaña Mágica">
+        <h3>La Montaña Mágica</h3>
+        <p><strong>Dirección:</strong> Vereda Chaparral, Guarne, Antioquia</p>
+        <p><strong>Descripción:</strong> Ubicado en lo alto de las montañas, este restaurante ofrece una vista espectacular y una experiencia gastronómica inolvidable con platos típicos antioqueños preparados con ingredientes frescos y orgánicos.</p>
+        <p><strong>Dueño:</strong> Andrea Muñoz Sánchez</p>
+      </div>
+
+      <div class="restaurant">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipNELVW66TFUIiVSCxAWyduaIVV0eQ2IW7_e-ewj=s680-w680-h510-rw" alt="Restaurante La Cabaña">
+        <h3>La Cabaña Parrilla</h3>
+        <p><strong>Dirección:</strong> Vía Guarne - San Vicente, km 3, Antioquia</p>
+        <p><strong>Descripción:</strong> Famosa por su carne a la parrilla y su ambiente rústico, este restaurante campestre es ideal para escapadas familiares y reuniones con amigos al aire libre.</p>
+        <p><strong>Dueño:</strong> Harold Daniel Velandia Guerrero</p>
+      </div>
+
+      <div class="restaurant">
+        <img src="https://elbalconpaisa.com/images/gallery-thumb/pic-12.jpg" alt="Restaurante El Balcón Paisa">
+        <h3>El Balcón Paisa</h3>
+        <p><strong>Dirección:</strong> Sector La Valeria, Guarne, Antioquia</p>
+        <p><strong>Descripción:</strong> Este restaurante tradicional ofrece auténtica comida paisa con porciones generosas y un ambiente acogedor que recuerda a las fondas antioqueñas de antaño.</p>
+        <p><strong>Dueña:</strong> Alexandra Grisales Ceballos</p>
+      </div>
+
+      <div class="restaurant">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr6zo5IbuBeoDNa_IvUGgzJ1bjbDGIfA-Gtj5QbA0uAomAjBbF7OWz0pmTzDsuSsFq76MaUxR9ygJ4eDMht6BPZG0Gzp6tLlHHsMOU4GRlgpE7PHo_lgPaJTfeTXZWBInaB9PJX8g=s680-w680-h510-rw" alt="Restaurante Finca La Piedra">
+        <h3>Finca La Piedra</h3>
+        <p><strong>Dirección:</strong> Kilómetro 4 Vía Guarne - Rionegro, Antioquia</p>
+        <p><strong>Descripción:</strong> Combinando naturaleza y buena mesa, este restaurante ofrece platos gourmet con un toque criollo en un entorno natural rodeado de jardines y senderos ecológicos.</p>
+        <p><strong>Dueño:</strong> Luis Buen Día</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-container">
+    <h2>¿Quieres agregar otro restaurante?</h2>
+    <form>
+      <label for="name">Nombre del Restaurante:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="description">Descripción:</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+
+      <label for="image">Imagen (URL):</label>
+      <input type="url" id="image" name="image" required>
+
+      <button type="submit">Agregar Restaurante</button>
+    </form>
+  </section>
+
+  <div class="thank-you">
+    ¡Gracias por revisar nuestra página!
+  </div>
+
+  <hr>
+
+  <header>Página de búsqueda de restaurantes</header>
+
+  <div class="browser-bar">
+    🔙 🔄 🔒 https://directory-restaurantes.com/search
+    <div class="nav-bar">
+      <span>Directory</span>
+      <span>Restaurants</span>
+      <span>Search</span>
+      <span>New</span>
+    </div>
+  </div>
+
+  <div class="search-box">
+    <label for="search">Escribe un texto</label><br>
+    <input type="text" id="search" value="Colombiano">
+    <button>Buscar</button>
+  </div>
+
+  <div class="restaurant-result">
+    <img src="restaurante_colombia.jpg" alt="Restaurante colombiano">
+    <p><strong>Arepas y Sabor</strong></p>
+    <p>Calle 10 #45-78, Medellín</p>
+    <p>Comida típica colombiana con el auténtico sabor paisa</p>
+  </div>
+
+  <form>
+    <h3>¿Deseas agregar un nuevo restaurante?</h3>
+    <label for="nombre">Nombre del restaurante:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" required>
+
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" name="descripcion" required></textarea>
+
+    <button type="submit">Agregar restaurante</button>
+  </form>
+
+  <p class="thanks">¡Gracias por visitar nuestra página de restaurantes en Colombia!</p>
+  <p class="note"><strong>Nota:</strong> los datos mostrados en esta página pueden ser referenciales.</p>
+
 </body>
 </html>
+       
+    
+        <section id="duenos" style="padding: 2rem; background-color: #fefefe;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1rem; color: #333;">Nuestros Fundadores</h2>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6; color: #555;">
+    Los creadores detrás de esta deliciosa experiencia son jóvenes emprendedores y estudiantes de la IUD Digital, apasionados por la gastronomía y la innovación. Cada uno de ellos dirige su propio restaurante dentro de este espacio, aportando su estilo, sazón y creatividad a cada plato. Más que compañeros de clase, son soñadores que decidieron unir sus talentos para transformar lo cotidiano en algo extraordinario. Su compromiso, energía y visión fresca se reflejan en cada rincón, haciendo de este lugar un punto de encuentro vibrante, auténtico y lleno de sabor.
+  </p>
+</section>
