@@ -1,11 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <title>Inicio - Restaurantes</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
-    
+  <header>
+    <h1><i class="fas fa-utensils"></i> Bienvenido a la Guía de Restaurantes</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="buscar.html">Buscar Restaurantes</a>
+      <a href="crear.html">Crear Nuevo Restaurante</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="galeria">
+      <img src="img/FUEGO Y SABOR.jpg" 
+      alt="Fuego y sabor" 
+      class="imagen-restaurante" 
+      data-nombre="Fuego y Sabor"
+      data-ubicacion="Cll 26 #5 - 10 Medellín Ant."
+      data-comida="Parrilla y asados"
+      data-menu="Carnes, costilla BBQ, churrazco, mazorca, pollo"/> 
+      
+      <img src="img/Delicias Gourmet.jpeg" alt="Delicias Gourmet" class="imagen-restaurante" 
+      data-nombre="Delicias Gourmet"
+       data-ubicacion="Cll 76 #45 a - 104 Bogotá C."
+       data-comida="Comida casera"
+       data-menu="canutillo de queso azul, solomo de ternera, ceviche, classic sandwich" />
+
+      <img src="img/LAS DELICIAS.jpg" alt="El Cuarto de las delicias" class="imagen-restaurante"
+      data-nombre="El Cuarto de Las Delicias"
+       data-ubicacion="Crr 26 #45 - 23 Cali."
+       data-comida="Comidas rápidas"
+       data-menu="Hamburguesa, pizza, salchipapa, perro caliente" />
+
+      <img src="img/PARRILAS.avif" alt="Parrilla" class="imagen-restaurante"
+      data-nombre="Parrilas"
+       data-ubicacion="Medellín-(Ant)"
+       data-comida="Carnes a la parrilla asados y bebias"
+       data-menu=" BBQ tejano, Tacos de carne mixta, churrazco, punta de anca"/>
+
+    </div>
+    <div id="info-restaurante" class="info" style="display:none;">
+      <h3 id="info-nombre"></h3>
+      <p><strong>Ubicación:</strong> <span id="info-ubicacion"></span></p>
+      <p><strong>Tipo de comida:</strong> <span id="info-comida"></span></p>
+      <button id="btn-ver-menu">Ver menú</button>
+
+<div id="menu-restaurante" style="display: none;">
+  <p><strong>Menú:</strong> <span id="info-menu"></span></p>
+     </div>
+    <p>Te esperamos</p>
+
+  </main>
+
+  <footer>
+    <p> ES UN PLACER TENERTE AQUÍ GRACIAS POR VISITARNOS </p>
+  </footer>
+  <script>
+    const imagenes = document.querySelectorAll('.imagen-restaurante');
+    const infoBox = document.getElementById('info-restaurante');
+    const nombre = document.getElementById('info-nombre');
+    const ubicacion = document.getElementById('info-ubicacion');
+    const comida = document.getElementById('info-comida');
+    const menu = document.getElementById('info-menu');
+    const menuBox = document.getElementById('menu-restaurante');
+    const btnMenu = document.getElementById('btn-ver-menu');
+  
+    imagenes.forEach(img => {
+      img.addEventListener('click', () => {
+        nombre.textContent = img.dataset.nombre;
+        ubicacion.textContent = img.dataset.ubicacion;
+        comida.textContent = img.dataset.comida;
+        menu.textContent = img.dataset.menu;
+        infoBox.style.display = 'block';
+        menuBox.style.display = 'none'; 
+      });
+    });
+  
+    btnMenu.addEventListener('click', () => {
+      if (menuBox.style.display === 'none') {
+        menuBox.style.display = 'block';
+      } else {
+        menuBox.style.display = 'none';
+      }
+    });
+  </script>
+  
+
 </body>
 </html>
