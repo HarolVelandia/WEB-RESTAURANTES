@@ -1,11 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Restaurantes IUD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
 </head>
 <body>
-    
+
+  <nav class="navbar navbar-expand-sm bg-dark p-3"> 
+    <div class="container-fluid">
+      <a class="navbar-brand text-success" href="#">Restaurantes IUD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active text-success" aria-current="page" href="Index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-success" href="Buscar.html">Buscar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-success" href="Crear.html">Crear</a>
+          
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://img.freepik.com/fotos-premium/comida-mexicana-tacos-dorados-o-flautas-pollo-lechuga-queso-crema-tomate_517131-5.jpg?ga=GA1.1.1057155881.1730579758&semt=ais_hybrid&w=740" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-md-block ">
+                <h5>Inforno</h5>
+                <p>Comprometidos con la calidad y la tradición, nos propusimos crear un espacio acogedor donde los comensales pudieran experimentar la verdadera esencia de la gastronomía italiana.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/fe/04/89/sarku.jpg?w=900&h=500&s=1" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Sarku Japan</h5>
+                <p>Comida oriental y variedad en postres.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://img.freepik.com/fotos-premium/pozole-rojo-mexicano-carne-cerdo_517131-63.jpg?ga=GA1.1.1057155881.1730579758&semt=ais_hybrid&w=740" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Andrés Carne De Res Chía</h5>
+                <p>En este universo laberíntico se reúne toda la cultura y sabrosura de Colombia. Entrar a este Paraíso Pagano abrirá sus ojos y su mente a un mundo de posibilidades donde el goce y la algarabía son el único fin.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+
+  
+
+  <div class="container mt-5 d-none d-md-block">
+    <h2 class="mb-4 text-center">Restaurantes Sugeridos </h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card bg-dark text-success">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/e0/d8/0d/celebra-tu-pedida-de.jpg?w=1000&h=-1&s=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Piazza By Storia D' Amore</h5>
+            <p class="card-text"><i class="bi bi-geo-alt"></i> Calle 122, 15A - 24, Bogotá 110111 Colombia</p>
+            <p class="card-text">Esencia de Italia: un lugar donde cada momento vibra con pasión y sabor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-dark text-success">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/98/51/94/caption.jpg?w=900&h=500&s=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">La Anticucheria</h5>
+            <p class="card-text"><i class="bi bi-geo-alt"></i> Cra 4a No 66 - 78, Bogotá 110231 Colombia</p>
+            <p class="card-text">Comida deliciosa, mucha variedad, hay para todos los gustos. Y el servicio inmejorable, todo el personal muy amable.</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-4">
+          <div class="card bg-dark text-success">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/9c/b2/d4/margherita.jpg?w=900&h=500&s=1" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Pizzardi Artigianale</h5>
+              <p class="card-text"><i class="bi bi-geo-alt"></i> Cl. 81 # 11-17, Bogotá 110110 Colombia</p>
+              <p class="card-text">¡La auténtica pizza napolitana en Bogotá! Masa madurada, con ingredientes de la más alta calidad. ¡De Napoli a tu mesa!</p>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 d-md-block">
+  <h2 class="mb-4 text-center">Todos Los Restaurantes</h2>
+  <div id="lista-restaurantes" class="row g-3"></div>
+</div>
+
+<footer>
+  <div class="container-fluid mt-5 bg-dark p-5">
+    <div class="row">
+      
+      <div class="col"><a href="#" class="text-decoration-none text-success"><i class="bi bi-instagram"></i> Instagram</a></div>
+      <div class="col"><a href="#" class="text-decoration-none text-success"><i class="bi bi-tiktok"></i> TikTok</a></div>
+      <div class="col"><a href="#" class="text-decoration-none text-success"><i class="bi bi-envelope-at"></i> Contactanos</a></div>
+      <div class="col"><a href="#" class="text-decoration-none text-success"><i class="bi bi-info-circle"></i> Mas Informacion</a></div>
+      
+    </div>
+</footer>
+
+      <link rel="stylesheet" href="css/style.css">
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+      <script src="js/scripts.js"></script>
+      <script>
+        mostrarTodosLosRestaurantes();
+      </script>
+
+
 </body>
+ 
+
 </html>
