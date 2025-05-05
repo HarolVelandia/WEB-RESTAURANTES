@@ -85,7 +85,7 @@ function guardarRestaurante() {
           <img src="${restaurante.imagen}" class="card-img-top" alt="${restaurante.nombre}" />
           <div class="card-body">
             <h5 class="card-title">${restaurante.nombre}</h5>
-            <p class="card-text"><strong>Dirección:</strong> ${restaurante.direccion}</p>
+            <p class="card-text"><strong><i class="bi bi-geo-alt"></i></strong> ${restaurante.direccion}</p>
             <p class="card-text">${restaurante.descripcion}</p>
             
           </div>
