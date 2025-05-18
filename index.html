@@ -1,150 +1,397 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurantes IUD</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurantes Colombianos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ffe0b2, #fff3e0);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #d84315;
+    }
+
+    header {
+      background-color: #ffccbc;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .restaurant-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .restaurant {
+      background: #fff8e1;
+      border: 2px solid #f57c00;
+      border-radius: 15px;
+      padding: 15px;
+      width: 260px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .restaurant:hover {
+      transform: scale(1.03);
+    }
+
+    .restaurant img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .form-container {
+      background-color: #ffe0b2;
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 40px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #ff7043;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #f4511e;
+    }
+
+    .thank-you {
+      margin-top: 30px;
+      background-color: #fff3e0;
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #d84315;
+    }
+
+    .browser-bar, .restaurant-result {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .nav-bar span {
+      background: #ffe0b2;
+      padding: 5px 10px;
+      border-radius: 20px;
+      color: #bf360c;
+      font-weight: bold;
+    }
+
+    .thanks, .note {
+      margin-top: 30px;
+      background-color: #fffde7;
+      padding: 15px;
+      border-left: 5px solid #f57f17;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-sm bg-dark p-3"> 
-    <div class="container-fluid">
-      <a class="navbar-brand text-success" href="#">Restaurantes IUD</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active text-success" aria-current="page" href="Index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-success" href="Buscar.html">Buscar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-success" href="Crear.html">Crear</a>
-          
-          </li>
-        </ul>
+  <h1>Restaurantes Colombianos</h1>
+  <header>
+    <h2>Restaurante IUD DIGITAL</h2>
+    <p>La Institución Universitaria Digital de Antioquía ha sido contratada para desarrollar un directorio web de restaurantes. Esta aplicación permite listar, buscar y registrar restaurantes cercanos al municipio de Guarne, Antioquia.</p>
+  </header>
+
+  <section>
+    <h2>Página de Inicio - Restaurantes cercanos a Guarne</h2>
+    <div class="restaurant-list">
+      <div class="restaurant">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqiGYRSUIF5O7dvpF9W63AzmdutB_esH1hFKNGE7Ku6_hTPvTvU_nAZE0rAaV6gI4mZSH47dTjsdv-FfMovwmJG0Q-Ogxgur1EZKEEuTMU0rvsKUhGBclf7_rshQuAOfd40y4O7sw=s680-w680-h510-rw" alt="Restaurante La Montaña Mágica">
+        <h3>La Montaña Mágica</h3>
+        <p><strong>Dirección:</strong> Vereda Chaparral, Guarne, Antioquia</p>
+        <p><strong>Descripción:</strong> Ubicado en lo alto de las montañas, este restaurante ofrece una vista espectacular y una experiencia gastronómica inolvidable con platos típicos antioqueños preparados con ingredientes frescos y orgánicos.</p>
+        <p><strong>Dueño:</strong> Andrea Muñoz Sánchez</p>
+      </div>
+
+      <div class="restaurant">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipNELVW66TFUIiVSCxAWyduaIVV0eQ2IW7_e-ewj=s680-w680-h510-rw" alt="Restaurante La Cabaña">
+        <h3>La Cabaña Parrilla</h3>
+        <p><strong>Dirección:</strong> Vía Guarne - San Vicente, km 3, Antioquia</p>
+        <p><strong>Descripción:</strong> Famosa por su carne a la parrilla y su ambiente rústico, este restaurante campestre es ideal para escapadas familiares y reuniones con amigos al aire libre.</p>
+        <p><strong>Dueño:</strong> Harold Daniel Velandia Guerrero</p>
+      </div>
+
+      <div class="restaurant">
+        <img src="https://elbalconpaisa.com/images/gallery-thumb/pic-12.jpg" alt="Restaurante El Balcón Paisa">
+        <h3>El Balcón Paisa</h3>
+        <p><strong>Dirección:</strong> Sector La Valeria, Guarne, Antioquia</p>
+        <p><strong>Descripción:</strong> Este restaurante tradicional ofrece auténtica comida paisa con porciones generosas y un ambiente acogedor que recuerda a las fondas antioqueñas de antaño.</p>
+        <p><strong>Dueña:</strong> Alexandra Grisales Ceballos</p>
+      </div>
+
+      <div class="restaurant">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr6zo5IbuBeoDNa_IvUGgzJ1bjbDGIfA-Gtj5QbA0uAomAjBbF7OWz0pmTzDsuSsFq76MaUxR9ygJ4eDMht6BPZG0Gzp6tLlHHsMOU4GRlgpE7PHo_lgPaJTfeTXZWBInaB9PJX8g=s680-w680-h510-rw" alt="Restaurante Finca La Piedra">
+        <h3>Finca La Piedra</h3>
+        <p><strong>Dirección:</strong> Kilómetro 4 Vía Guarne - Rionegro, Antioquia</p>
+        <p><strong>Descripción:</strong> Combinando naturaleza y buena mesa, este restaurante ofrece platos gourmet con un toque criollo en un entorno natural rodeado de jardines y senderos ecológicos.</p>
+        <p><strong>Dueño:</strong> Luis Buen Día</p>
       </div>
     </div>
-  </nav>
+  </section>
 
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://img.freepik.com/fotos-premium/comida-mexicana-tacos-dorados-o-flautas-pollo-lechuga-queso-crema-tomate_517131-5.jpg?ga=GA1.1.1057155881.1730579758&semt=ais_hybrid&w=740" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-md-block ">
-                <h5>Inforno</h5>
-                <p>Comprometidos con la calidad y la tradición, nos propusimos crear un espacio acogedor donde los comensales pudieran experimentar la verdadera esencia de la gastronomía italiana.</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/fe/04/89/sarku.jpg?w=900&h=500&s=1" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Sarku Japan</h5>
-                <p>Comida oriental y variedad en postres.</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="https://img.freepik.com/fotos-premium/pozole-rojo-mexicano-carne-cerdo_517131-63.jpg?ga=GA1.1.1057155881.1730579758&semt=ais_hybrid&w=740" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Andrés Carne De Res Chía</h5>
-                <p>En este universo laberíntico se reúne toda la cultura y sabrosura de Colombia. Entrar a este Paraíso Pagano abrirá sus ojos y su mente a un mundo de posibilidades donde el goce y la algarabía son el único fin.</p>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
+  <section class="form-container">
+    <h2>¿Quieres agregar otro restaurante?</h2>
+    <form>
+      <label for="name">Nombre del Restaurante:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="description">Descripción:</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+
+      <label for="image">Imagen (URL):</label>
+      <input type="url" id="image" name="image" required>
+
+      <button type="submit">Agregar Restaurante</button>
+    </form>
+  </section>
+
+  <div class="thank-you">
+    ¡Gracias por revisar nuestra página!
+  </div>
+
+  <hr>
+
+  <header>Página de búsqueda de restaurantes</header>
+
+  <div class="browser-bar">
+    🔙 🔄 🔒 https://directory-restaurantes.com/search
+    <div class="nav-bar">
+      <span>Directory</span>
+      <span>Restaurants</span>
+      <span>Search</span>
+      <span>New</span>
     </div>
   </div>
 
-  
-
-  <div class="container mt-5 d-none d-md-block">
-    <h2 class="mb-4 text-center">Restaurantes Sugeridos </h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card bg-dark text-success">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/e0/d8/0d/celebra-tu-pedida-de.jpg?w=1000&h=-1&s=1" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Piazza By Storia D' Amore</h5>
-            <p class="card-text"><i class="bi bi-geo-alt"></i> Calle 122, 15A - 24, Bogotá 110111 Colombia</p>
-            <p class="card-text">Esencia de Italia: un lugar donde cada momento vibra con pasión y sabor.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card bg-dark text-success">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/98/51/94/caption.jpg?w=900&h=500&s=1" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">La Anticucheria</h5>
-            <p class="card-text"><i class="bi bi-geo-alt"></i> Cra 4a No 66 - 78, Bogotá 110231 Colombia</p>
-            <p class="card-text">Comida deliciosa, mucha variedad, hay para todos los gustos. Y el servicio inmejorable, todo el personal muy amable.</p>
-          </div>
-        </div>
-      </div>
-        <div class="col-md-4">
-          <div class="card bg-dark text-success">
-            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/9c/b2/d4/margherita.jpg?w=900&h=500&s=1" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Pizzardi Artigianale</h5>
-              <p class="card-text"><i class="bi bi-geo-alt"></i> Cl. 81 # 11-17, Bogotá 110110 Colombia</p>
-              <p class="card-text">¡La auténtica pizza napolitana en Bogotá! Masa madurada, con ingredientes de la más alta calidad. ¡De Napoli a tu mesa!</p>
-            </div>
-          </div>
-    </div>
+  <div class="search-box">
+    <label for="search">Escribe un texto</label><br>
+    <input type="text" id="search" value="Colombiano">
+    <button>Buscar</button>
   </div>
-</div>
 
-<div class="container mt-5 d-md-block">
-  <h2 class="mb-4 text-center">Todos Los Restaurantes</h2>
-  <div id="lista-restaurantes" class="row g-3"></div>
-</div>
+  <div class="restaurant-result">
+    <img src="restaurante_colombia.jpg" alt="Restaurante colombiano">
+    <p><strong>Arepas y Sabor</strong></p>
+    <p>Calle 10 #45-78, Medellín</p>
+    <p>Comida típica colombiana con el auténtico sabor paisa</p>
+  </div>
 
-<footer>
-  <div class="container-fluid mt-5 bg-dark p-5">
-    <div class="row">
-      
-      <div class="col"><a href="#" class="text-decoration-none text-success"><i class="bi bi-instagram"></i> Instagram</a></div>
-      <div class="col"><a href="#" class="text-decoration-none text-success"><i class="bi bi-tiktok"></i> TikTok</a></div>
-      <div class="col"><a href="#" class="text-decoration-none text-success"><i class="bi bi-envelope-at"></i> Contactanos</a></div>
-      <div class="col"><a href="#" class="text-decoration-none text-success"><i class="bi bi-info-circle"></i> Mas Informacion</a></div>
-      
-    </div>
-</footer>
+  <form>
+    <h3>¿Deseas agregar un nuevo restaurante?</h3>
+    <label for="nombre">Nombre del restaurante:</label>
+    <input type="text" id="nombre" name="nombre" required>
 
-      <link rel="stylesheet" href="css/style.css">
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" required>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-      <script src="js/scripts.js"></script>
-      <script>
-        mostrarTodosLosRestaurantes();
-      </script>
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" name="descripcion" required></textarea>
 
+    <button type="submit">Agregar restaurante</button>
+  </form>
+
+  <p class="thanks">¡Gracias por visitar nuestra página de restaurantes en Colombia!</p>
+  <p class="note"><strong>Nota:</strong> los datos mostrados en esta página pueden ser referenciales.</p>
 
 </body>
- 
+</html>
+       
+    
+        <section id="duenos" style="padding: 2rem; background-color: #fefefe;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1rem; color: #333;">Nuestros Fundadores</h2>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6; color: #555;">
+    Los creadores detrás de esta deliciosa experiencia son jóvenes emprendedores y estudiantes de la IUD Digital, apasionados por la gastronomía y la innovación. Cada uno de ellos dirige su propio restaurante dentro de este espacio, aportando su estilo, sazón y creatividad a cada plato. Más que compañeros de clase, son soñadores que decidieron unir sus talentos para transformar lo cotidiano en algo extraordinario. Su compromiso, energía y visión fresca se reflejan en cada rincón, haciendo de este lugar un punto de encuentro vibrante, auténtico y lleno de sabor.
+  </p>
+</section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contador Restaurante</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffe4ec, #fff0f5);
+      color: #5c2a4a;
+      text-align: center;
+      padding: 2rem;
+    }
 
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #b93f8e;
+    }
+
+    .contador {
+      background-color: #fff5f9;
+      border: 2px solid #f7c1dc;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(255, 192, 203, 0.3);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .contador::before {
+      content: "🌸";
+      font-size: 2rem;
+      position: absolute;
+      top: -10px;
+      right: 20px;
+    }
+
+    .contador-buttons {
+      margin-top: 1rem;
+    }
+
+    .contador-buttons button {
+      background-color: #ff69b4;
+      color: white;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contador-buttons button:hover {
+      background-color: #e0559a;
+    }
+
+    .perfil {
+      background-color: #fff5f9;
+      border: 2px solid #f7c1dc;
+      border-radius: 15px;
+      padding: 1.5rem;
+      width: 300px;
+      margin: 0 auto;
+      box-shadow: 0 4px 10px rgba(255, 192, 203, 0.2);
+      transition: background-color 0.5s;
+    }
+
+    .perfil.activo {
+      background-color: #ffcce5;
+      border-color: #f191bd;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contador Restaurante 🌸</h1>
+
+  <div class="contador">
+    <h2>Componente Contador</h2>
+    <p>Valor actual: <span id="valor">0</span></p>
+    <p>Última acción: <span id="accion">ninguna</span></p>
+
+    <div class="contador-buttons">
+      <button onclick="cambiarContador(-1)">-</button>
+      <button onclick="reiniciarContador()">R</button>
+      <button onclick="cambiarContador(1)">+</button>
+    </div>
+  </div>
+
+  <div class="perfil" id="perfil">
+    <h2>Perfil del usuario</h2>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" />
+
+    <label for="rol">Rol:</label>
+    <select id="rol" name="rol">
+      <option value="">Seleccione</option>
+      <option>Estudiante</option>
+      <option>Profesor</option>
+      <option>Administrador</option>
+    </select>
+  </div>
+
+  <script>
+    let contador = 0;
+
+    function cambiarContador(valor) {
+      contador += valor;
+      document.getElementById('valor').textContent = contador;
+      document.getElementById('accion').textContent = valor > 0 ? 'incremento' : 'decremento';
+    }
+
+    function reiniciarContador() {
+      contador = 0;
+      document.getElementById('valor').textContent = contador;
+      document.getElementById('accion').textContent = 'reinicio';
+    }
+
+    // Lógica para cambiar color del formulario
+    const perfil = document.getElementById('perfil');
+    const nombre = document.getElementById('nombre');
+    const email = document.getElementById('email');
+    const rol = document.getElementById('rol');
+
+    function verificarFormulario() {
+      if (nombre.value.trim() || email.value.trim() || rol.value) {
+        perfil.classList.add('activo');
+      } else {
+        perfil.classList.remove('activo');
+      }
+    }
+
+    nombre.addEventListener('input', verificarFormulario);
+    email.addEventListener('input', verificarFormulario);
+    rol.addEventListener('change', verificarFormulario);
+  </script>
+
+</body>
 </html>
