@@ -1,0 +1,23 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
+  color: #dc3545 !important; /* texto rojo */
+}
+
+h1, h2, h3, h4, h5, h6,
+p, span, label, a, button, input, div, li {
+  color: #dc3545 !important;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
