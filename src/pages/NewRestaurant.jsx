@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { addRestaurant } from "../utils/storage";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
+import { useNavigate } from "react-router-dom";
 
-function NewRestaurant() {
+function NewRestaurant({onAdd}) {
   const [form, setForm] = useState({
     nombre: "",
     descripcion: "",
@@ -9,16 +11,30 @@ function NewRestaurant() {
     imagen: ""
   });
 
+  
+  const navigate = useNavigate();
+
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    addRestaurant(form);
-    alert("Restaurante creado y guardado localmente.");
-    setForm({ nombre: "", descripcion: "", direccion: "", imagen: "" });
+    try {
+      await addDoc(collection(db, "restaurants"), form);
+      alert("Restaurante creado y guardado localmente.");
+      navigate("/");
+      setForm({ nombre: "", descripcion: "", direccion: "", imagen: "" });
+
+      // Llamamos a onAdd para que Home recargue la lista
+      if (onAdd) onAdd();
+
+    } catch (error) {
+      console.error("Error al agregar restaurante:", error);
+      alert("Error al guardar el restaurante.");
+    }
   };
+
 
   return (
     <div>
