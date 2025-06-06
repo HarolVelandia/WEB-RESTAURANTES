@@ -1,36 +1,41 @@
-import { restaurants as sugeridos } from "../data/restaurants";
-import { getRestaurants } from "../utils/storage";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/config";
 import RestaurantCard from "../components/RestaurantCard";
 
 function Home() {
-  const todos = getRestaurants();
-  const nuevos = todos.slice(sugeridos.length); // Solo los creados por el usuario
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "restaurants"));
+        const firestoreRestaurants = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setRestaurants(firestoreRestaurants);
+      } catch (error) {
+        console.error("Error al obtener restaurantes:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div>
-      {/* Restaurantes Sugeridos */}
-      <h2 className="text-center mb-4">Restaurantes Sugeridos</h2>
+      {/* Lista de Restaurantes */}
       <div className="row">
-        {sugeridos.map((r, i) => (
-          <div key={i} className="col-md-4">
+        {restaurants.map((r) => (
+          <div key={r.id} className="col-md-4 mb-4">
             <RestaurantCard restaurante={r} />
           </div>
         ))}
       </div>
 
-      {/* Separador */}
-      <h2 className="text-center mt-5 mb-4">Todos los Restaurantes</h2>
-      <div className="row">
-        {nuevos.length === 0 ? (
-          <p className="text-center text-muted">No hay restaurantes registrados.</p>
-        ) : (
-          nuevos.map((r, i) => (
-            <div key={i} className="col-md-4">
-              <RestaurantCard restaurante={r} />
-            </div>
-          ))
-        )}
-      </div>
+      <h2 className="text-center mt-5 text-danger fw-bold">Todos los Restaurantes</h2>
     </div>
   );
 }
